@@ -15,6 +15,12 @@ The data given to us by W. Avy comes as an SQLite database. This means as it is 
 
 ##### Analysis
 
+For our analysis, we are using the Python package SQLalchemy to access the SQLite database we've been given. There are additional dependances in SQLalchemy we also import to create a database later on, e.g., automap, session, create_engine, and func. All of these imports will allow us to query the SQLite database and create our own tables and thus database down the line. One of the keys to the system working is ORM, or object relational mapping. This allows us to detangle coupled data into objects that can be used and accessed and manipulated on their own without interupting the rest of the database. This also allows to easier lines of code used to query this "virtual" database we create rather than complex lines of loops. Overall, so long as we understand what's in the database and the limits of our queries this is an easy and lightweight way to manipulate databases in Python. 
+
+We start accessing the database by using the create_engine and automap_base functions to create a path to the database and reflect it's contents into a structure we can use it in. The class we established with automap_base, Base, is where we reflect the SQLite database to via the path created by the engine. Now rather than being stored in tables, the data is now stored in classes which we access and set to their own variables for faster access. We then pass our engine to the Session, which allows us to fully converse with the SQLite database and query it.
+
+For our analysis we specifically wanted to look at the months of June and December. To that end we create a query that asks the SQLite database for all the dates and temperature obersations, but then to filter to only look for those with a date where the month matches "6" or "12" for June or December respectively. The results of that query are then placed in a Pandas dataframe for the purpose of using the describe function to obtain statistics.
+
 
 ### Results
 
