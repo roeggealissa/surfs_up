@@ -5,6 +5,8 @@ SQLite, SQLAlchemy, and Flask for weather analysis
 
 ### Introduction 
 
+#### Project goals
+
 The primary purpose of this project is to use SQL, SQLAlchemy, and Python to make suggestions to investors on a possible new business project.
 
 The weather analysis in this will determine if the island of Oahu is suitable for our project. I looked at data such as temperature and precipitation to determine if it is too cold or wet for possible investors to be interested in a possible business venture. The project is more to set up the framework of the data analysis and how it is passed on to investors rather than a quantitative result.
